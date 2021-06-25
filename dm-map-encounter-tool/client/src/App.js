@@ -7,22 +7,32 @@ import Login from './pages/login';
 import NoMatch from './pages/NoMatch';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+// have to install the auth component that I went over with John
 
 function App() {
+  const { userId } = useContext(AuthContext)
   return (
     <>
       <Router>
         <Nav />
-        <Switch>
+        { userId
+        ? (<Switch>
           <Route exact path={["/", "/home"]}>
             <Home />
           </Route>
           <Route exact path="/collections">
-            {/* {loggedIn ? <Redirect to="/login" /> : <Collections />} this is the going to redirect the user to the login in page if they are not logged in  */}
             <Collections />
           </Route>
           <Route exact path="/encounter">
             <Encounter />
+          </Route>
+          <Route>
+            <NoMatch />
+          </Route>
+        </Switch> )
+        : (<Switch>
+          <Route exact path={["/", "/home"]}>
+            <Home />
           </Route>
           <Route exact path="/login">
             <Login />
@@ -31,6 +41,8 @@ function App() {
             <NoMatch />
           </Route>
         </Switch>
+        )
+}
       </Router>
       <Footer />
     </>
