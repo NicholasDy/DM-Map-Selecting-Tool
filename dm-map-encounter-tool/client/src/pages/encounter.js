@@ -1,47 +1,83 @@
-import React from "react";
+import React, { useState } from "react";
 import DropDown from "../components/DropDown";
 
+
 function Encounter() {
-    // const [terrain, setTerrain] = useState([])
-   
-//    // how do I pass in the array
-//     const terrain = [
-//         "Tavern",
-//         "Woodland",
-//         "Plains"
-//     ]
+    const [selections, setSelections] = useState({ location: "tavern", npcNum: 1 });
+    // const [locations, setLocations] = useState([]);
 
-//     const npcNum = [
+    const locations = [
+        "Tavern",
+        "Woodland",
+        "Plains",
+    ]
 
-//     ];
+    const npcNums = [
+        1, 2, 3, 4, 5, 6, 7, 8, 9
+    ]
 
+    // useEffect(() => {
+    // when the compoment drop mounts we want to set the default art to 0 index on locations and hard code the npcNums 
+    // effect
+    //     return () => {
+    //         cleanup
+    //     }
+    // }, [])
 
+    // const [terrains, setTerrains] = useState([])
+    // api call for the terrain 
+
+    const styleBox = {
+        height: "500px",
+    }
+
+    const handleInputChange = event => {
+        console.log("hi")
+        setSelections({
+            ...selections,
+            [event.target.name]: event.target.value
+        })
+    }
+
+    const handleSubmit = () => {
+        console.log(selections)
+    }
+
+    function inputChange() {
+        //going to change the options field to a 
+    }
     return (
         <div>
+            
             <p>Place holder as the encounter form and layout is going to go here</p>
             <div className="container">
-                {/* <DropDown props={[terrain]} /> */}
                 <label className="m-2">
-                    Location:
-                    <select>
-                        <option value="tavern"> Tavern</option>
-                        <option value="woodland"> Woodland</option>
-                        <option value="plain"> Plain</option>
-                    </select>
+                    Type of location:
+                    <DropDown
+                        options={locations}
+                        handleSelect={handleInputChange}
+                        name="location"
+                    />
                 </label>
                 <label className="m-2">
+                    {/* going to try and get it the same as Amazon's input change */}
                     Number of NPC's:
-                    <select>
-                        <option value="1"> 1</option>
-                        <option value="2"> 2</option>
-                        <option value="3"> 3</option>
-                    </select>
+                    <DropDown
+                        options={npcNums}
+                        handleSelect={handleInputChange}
+                        name="npcNum"
+                    />
+                    {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
                 </label>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" onClick={handleSubmit} />
             </div>
+            <div style={styleBox} className="border border-dark w-75 mx-auto ">
+
+            </div>
+
         </div>
 
-        // adding in a zoom in feature for the images when they are rendered onto the screen
+        //     // adding in a zoom in feature for the images when they are rendered onto the screen
     )
 }
 export default Encounter

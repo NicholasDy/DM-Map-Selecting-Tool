@@ -1,14 +1,17 @@
-function DropDown([props]) {
-    
+
+function DropDown(props) {
+
     return (
-        <label className="m-2">
-            Type of location
-            <select>
-                <option value="tavern"> {props}</option>
-                <option value="woodland"> Woodland</option>
-                <option value="plain"> Plain</option>
-            </select>
-        </label>
+        <select onChange={props.handleSelect} name={props.name} >
+            {props.options.map(option => (
+                <option
+                    key={option}
+                    value={option}
+                >
+                    {option}
+                </option>
+            ))}
+        </select>
     )
 }
 
