@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DropDown from "../components/DropDown";
+import API from "../utils/API";
 
 
 function Encounter() {
@@ -16,13 +17,17 @@ function Encounter() {
         1, 2, 3, 4, 5, 6, 7, 8, 9
     ]
 
-    // useEffect(() => {
+    useEffect(() => {
+        API.terrainAPI()
+        .then(res => {
+            console.log(res)
+        })
     // when the compoment drop mounts we want to set the default art to 0 index on locations and hard code the npcNums 
     // effect
-    //     return () => {
-    //         cleanup
-    //     }
-    // }, [])
+        // return () => {
+        //     cleanup
+        // }
+    }, [])
 
     // const [terrains, setTerrains] = useState([])
     // api call for the terrain 
