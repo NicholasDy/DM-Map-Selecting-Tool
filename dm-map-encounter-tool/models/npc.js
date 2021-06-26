@@ -19,6 +19,20 @@ Npc.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        terrainId: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: "location",
+                key: "id"
+            }
+        }
+    },
+    {
+        sequelize,
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
+        modelName: "npc",
     }
 )
 
