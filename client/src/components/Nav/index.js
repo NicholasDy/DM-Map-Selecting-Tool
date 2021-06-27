@@ -20,9 +20,13 @@ function Nav() {
                     <a href="/encounter" className="nav-link">
                         Encounter
                     </a>
-                    <a href="login" className="nav-link">
+                    <a href="/upload" className="nav-link">
+                        Upload
+                    </a>
+                    <a href="/login" className="nav-link">
                         Login
                     </a>
+                    
                 </div>
 
             </div>

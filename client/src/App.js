@@ -7,6 +7,7 @@ import Login from './pages/login';
 import NoMatch from './pages/NoMatch';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import Upload from './pages/upload';
 // import { AuthProvider, useAuthContext } from './components/AuthContext/index';
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route exact path="/login">
             <Login />
+          </Route>
+          <Route exact path="/upload">
+            <Upload />
           </Route>
           <Route>
             <NoMatch />

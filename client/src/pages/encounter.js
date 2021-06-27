@@ -4,7 +4,8 @@ import API from "../utils/API";
 
 
 function Encounter() {
-    const [selections, setSelections] = useState({ location: "tavern", npcNum: 1 });
+    const [selections, setSelections] = useState({ location: "Tavern", npcNum: 1 });
+    const [imageIds, setImageIds] = useState();
     // const [locations, setLocations] = useState([]);
 
     const locations = [
@@ -19,11 +20,11 @@ function Encounter() {
 
     useEffect(() => {
         API.terrainAPI()
-        .then(res => {
-            console.log(res)
-        })
-    // when the compoment drop mounts we want to set the default art to 0 index on locations and hard code the npcNums 
-    // effect
+            .then(res => {
+                console.log(res)
+            })
+        // when the compoment drop mounts we want to set the default art to 0 index on locations and hard code the npcNums 
+        // effect
         // return () => {
         //     cleanup
         // }
@@ -44,8 +45,20 @@ function Encounter() {
         })
     }
 
-    const handleSubmit = () => {
-        console.log(selections)
+    const handleSubmit = async () => {
+        try {
+            console.log(selections)
+            switch (selections.location) {
+                case "Tavern":
+                    console.log('Tavern')
+                    const callImage = await API.imagePull(selections.location)
+                    console.log(callImage.data)
+                default:
+                    return
+            }
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     function inputChange() {
@@ -53,7 +66,7 @@ function Encounter() {
     }
     return (
         <div>
-            
+
             <p>Place holder as the encounter form and layout is going to go here</p>
             <div className="container">
                 <label className="m-2">
