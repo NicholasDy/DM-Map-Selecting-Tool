@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import DropDown from "../components/DropDown";
 import API from "../utils/API";
-
+import { Image } from 'cloudinary-react'
 
 function Encounter() {
     const [selections, setSelections] = useState({ location: "Tavern", npcNum: 1 });
-    const [imageIds, setImageIds] = useState();
+    const [selectedMap, setSelectedMap] = useState();
     // const [locations, setLocations] = useState([]);
 
     const locations = [
@@ -43,22 +43,39 @@ function Encounter() {
             ...selections,
             [event.target.name]: event.target.value
         })
+        console.log(selections)
     }
 
     const handleSubmit = async () => {
         try {
             console.log(selections)
-            switch (selections.location) {
-                case "Tavern":
-                    console.log('Tavern')
-                    const callImage = await API.imagePull(selections.location)
-                    console.log(callImage.data)
-                default:
-                    return
-            }
+            const callImage = await API.imagePull(selections.location)
+            console.log(callImage.data)
+            renderImage(callImage.data)
+            // // switch (selections.location) {
+            //     case "Tavern":
+            //         console.log('Tavern')
+            //         const callImage = await API.imagePull(selections.location)
+            //         console.log(callImage.data)
+            //         renderImage(callImage.data)
+            //     default:
+            //         return
+            // }
         } catch (error) {
             console.log(error)
         }
+    }
+
+
+
+    const renderImage = (selectedMap) => {
+        let min = Math.ceil(0);
+        let max = Math.floor(selectedMap.length);
+        const randomSelected = Math.floor(Math.random() * (max - min))
+        setSelectedMap(selectedMap[randomSelected])
+        console.log("image loaded")
+        console.log(selectedMap[randomSelected])
+
     }
 
     function inputChange() {
@@ -91,6 +108,12 @@ function Encounter() {
             </div>
             <div style={styleBox} className="border border-dark w-75 mx-auto ">
 
+                <Image
+                    cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
+                    publicId={selectedMap}
+                    width="100%"
+                    height="100%"
+                />
             </div>
 
         </div>

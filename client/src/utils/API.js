@@ -32,14 +32,25 @@ export default {
 
     },
 
-    uploadImage: function (dataOutput) {
-        return axios({
-            method: 'POST',
-            url: '/api/cloudinary',
-            body: JSON.stringify({ data: dataOutput })
-        })
-    }
+    uploadImage: async function (base64EncodedImage, { location }) {
+        try {
+            console.log('Upload call')
+            await axios.post({
+                method: 'POST',
+                url: '/api/cloudinary/' + location,
+                data: JSON.stringify({ data: base64EncodedImage })
+            })
+            const postcall = await axios({
+                method: 'POST',
+                url: '/api/cloudinary/' + location,
+                body: JSON.stringify({ data: base64EncodedImage })
+            })
+            return 
+        } catch (error) {
+            console.log(error)
+        }
 
+    }
 
 }
 
