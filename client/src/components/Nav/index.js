@@ -14,9 +14,9 @@ function Nav() {
                     <a href="/" className="nav-link active">
                         Home
                     </a>
-                    <a href="/collections" className="nav-link">
+                    {/* <a href="/collections" className="nav-link">
                         Collections
-                    </a>
+                    </a> */}
                     <a href="/encounter" className="nav-link">
                         Encounter
                     </a>

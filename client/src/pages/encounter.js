@@ -6,6 +6,7 @@ import { Image } from 'cloudinary-react'
 function Encounter() {
     const [selections, setSelections] = useState({ location: "Tavern", npcNum: 1 });
     const [selectedMap, setSelectedMap] = useState();
+    const [creatureSelected, setCreatureSelected] = useState();
     // const [locations, setLocations] = useState([]);
 
     const locations = [
@@ -107,7 +108,6 @@ function Encounter() {
                 <input type="submit" value="Submit" onClick={handleSubmit} />
             </div>
             <div style={styleBox} className="border border-dark w-75 mx-auto ">
-
                 <Image
                     cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
                     publicId={selectedMap}

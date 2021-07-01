@@ -23,9 +23,9 @@ function App() {
           <Route exact path="/collections">
             <Collections />
           </Route>
-          <Route exact path="/encounter">
+          {/* <Route exact path="/encounter">
             <Encounter />
-          </Route>
+          </Route> */}
           <Route exact path="/login">
             <Login />
           </Route>

@@ -78,6 +78,8 @@ function Upload() {
 
     return (
         <div>
+           
+            <h1 className="title">Upload an Map</h1> 
             <label className="m-2">
                 Type of location:
                 <DropDown
@@ -87,7 +89,6 @@ function Upload() {
                     name="location"
                 />
             </label>
-            <h1 className="title">Upload an Map</h1>
             <form onSubmit={handleSubmitFile} className="form">
                 <input
                     id="fileInput"

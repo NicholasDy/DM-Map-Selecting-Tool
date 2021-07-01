@@ -1,5 +1,7 @@
 import React from "react";
 
+// this page is meant to act as a location for all of the saved encounters a user might have 
+
 function Collections (){
 
      //call state 
