@@ -62,6 +62,7 @@ function Upload() {
             // setPreviewSource('');
 
             //this works
+            console.log(location)
             await fetch('/api/cloudinary/' + location, {
                 method: 'POST',
                 body: JSON.stringify({ data: base64EncodedImage }),

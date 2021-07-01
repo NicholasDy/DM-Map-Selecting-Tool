@@ -4,9 +4,9 @@ const { cloudinary } = require('../../utlis/cloudinary')
 router.post('/Tavern', async (req, res) => {
     try {
         const fileStr = req.body.data;
-        const uploadResponse = await cloudinary.uploader.upload(fileStr, {
-            upload_preset: 'tavern',
-        });
+        const uploadResponse = await cloudinary.uploader.upload(fileStr,
+            { upload_preset: 'tavern_setup' },
+            { folder: "tavern" });
         console.log("here", uploadResponse);
         res.json({ msg: 'done' });
     } catch (err) {
@@ -17,9 +17,9 @@ router.post('/Tavern', async (req, res) => {
 router.post('/Woodland', async (req, res) => {
     try {
         const fileStr = req.body.data;
-        const uploadResponse = await cloudinary.uploader.upload(fileStr, {
-            upload_preset: 'Woodland',
-        });
+        const uploadResponse = await cloudinary.uploader.upload(fileStr,
+            { upload_preset: 'Woodland' },
+            { folder: "woodland" });
         console.log("here", uploadResponse);
         res.json({ msg: 'done' });
     } catch (err) {
@@ -30,9 +30,9 @@ router.post('/Woodland', async (req, res) => {
 router.post('/Plains', async (req, res) => {
     try {
         const fileStr = req.body.data;
-        const uploadResponse = await cloudinary.uploader.upload(fileStr, {
-            upload_preset: 'plains',
-        });
+        const uploadResponse = await cloudinary.uploader.upload(fileStr, 
+            { upload_preset: 'plains' },
+            { folder: "woodland" });
         console.log("here", uploadResponse);
         res.json({ msg: 'done' });
     } catch (err) {

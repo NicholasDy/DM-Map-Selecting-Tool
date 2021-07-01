@@ -32,6 +32,8 @@ export default {
 
     },
 
+    //this is refusing to transfer the data for the file over to the server
+
     uploadImage: async function (base64EncodedImage, { location }) {
         try {
             console.log('Upload call')
