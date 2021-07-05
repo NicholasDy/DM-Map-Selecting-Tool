@@ -1,7 +1,8 @@
 import React from "react"
 import { Carousel } from "react-bootstrap";
-import redImage from "../images/redditimage.PNG"
-import dndImage from "../images/dungeond-and-dragons-books-1146037.jpeg"
+import redImage from "../images/redditimage.PNG";
+import dndImage from "../images/dungeond-and-dragons-books-1146037.jpeg";
+import placeHolder from "../images/team-placeholder.png"
 
 function Home() {
     return (
@@ -39,33 +40,67 @@ function Home() {
                 </Carousel>
             </div>
 
-            <div>
+            <div className="m-4 p-2 border border-dark border-4">
                 <h2>
                     What is D&D Map Finder?
                 </h2>
                 <p>
-                    Part of the problem for any Dungeon Master when they are running their own campaign is what is the right map or location to use when you are running random encounters? Not everyone is gifted at creating a scene in their head and perfectly discribing the area to their players. 
+                    Part of the problem for any Dungeon Master when they are running their own campaign is what is the right map or location to use when you are running random encounters? Not everyone is gifted at creating a scene in their head and perfectly discribing the area to their players.
                 </p>
+                <p>
+                    D&D Map Finder aims to help fix some of the problems that many people face by storing a random collection of maps in one place. Don't go searching the internet looking for maps when all you have to do is input the area you are looking for and a map will appear before you.
+                </p>
+                <p>
+                    If you don't like what map you are given you can search again and a another map will appear based on the inputs you have selected.
+                </p>
+
+            </div>
+
+            <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between">
+                <div>
+                    <h2>Find your map!</h2>
+                    <p>Dynamically find the map you are looking for!</p>
+                </div>
+                <div className="p-3">
+                    <img src={placeHolder} />
+
+                </div>
+            </div>
+
+            <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between">
+                 <div className="p-3">
+                    <img src={placeHolder} />
+
+                </div>
+                <div>
+                    <h2>Upload your favourite maps</h2>
+                    <p>Find a map online that you think others are going to use? Upload it to our servers so everyone can enjoy!</p>
+                </div>
+               
+
             </div>
 
             <article className="m-4 p-2 border border-dark border-4">
                 <h2>
                     What is next for D&D Map Finder?
                 </h2>
+                <p>
+                    Right now we are planning on adding more categories such as the Underdark, cities, castles... you name it. As this is still in the testing phase the amount of categories are small so please be patient. The below sections are major additions we plan on adding to the app.
+                </p>
                 <div>
                     <h3 className="" >
-                        2.0 - NPC Tokens 
+                        2.0 - NPC Tokens
                     </h3>
                     <p>
-                        When you input the number of NPC's into the encounter tab, the hope is that you will have NPC tokens that you can move onto the screen. This will help any DM to manage a large number of NPC's during combat. 
+                        When you input the number of NPC's into the encounter tab, the hope is that you will have NPC tokens that you can move onto the screen. This will help any DM to manage a large number of NPC's during combat.
                     </p>
                 </div>
                 <div>
                     <h3 className="" >
-                        3.0 - Player Tokens 
+                        3.0 - Player Tokens
                     </h3>
                     <p>
-                        When the map is loading onto the screen I want there to be an input so that you as a DM will be able to posistion your players dynamically on to the MAP. 
+                        When the map is loading onto the screen I want there to be an input so that you as a DM will be able to posistion your players dynamically on to the MAP.
                     </p>
                 </div>
                 <div>
@@ -73,11 +108,11 @@ function Home() {
                         4.0 - Collections
                     </h3>
                     <p>
-                        With the collections tab, my goal is for each of the users to be able to save their favourite encounters. Then if they ever want to be able to refer back to the encounter the user will be able to have it render onto the page. 
+                        With the collections tab, my goal is for each of the users to be able to save their favourite encounters. Then if they ever want to be able to refer back to the encounter the user will be able to have it render onto the page.
                     </p>
                 </div>
             </article>
-            
+
         </>
     )
 }

@@ -63,6 +63,11 @@ li{
   text-indent: 5%;
 }
 
+.mapcontainer{
+  max-width:750px;
+  min-width: 300px;
+}
+
 @media screen and (max-width: 575px){
   .stat-block{
       margin: 20px 0;

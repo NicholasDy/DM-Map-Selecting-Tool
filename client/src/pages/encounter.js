@@ -42,7 +42,7 @@ function Encounter() {
         //     cleanup
         // }
     }, [])
-    
+
     // useEffect(() => {
     //     
     //     return () => {
@@ -68,7 +68,7 @@ function Encounter() {
             console.log(selections)
             const callImage = await API.imagePull(selections.location)
             renderImage(callImage.data)
-            
+
             // // switch (selections.location) {
             //     case "Tavern":
             //         console.log('Tavern')
@@ -92,59 +92,73 @@ function Encounter() {
 
     }
 
- 
+
     // function inputChange() {
     //     //going to change the options field to a 
     // }
     return (
         <div>
+            <div className="border border-4 border-dark m-3 p-2">
+                <h2>Map Finder</h2>
+                <p>
+                    Put in the location you are looking for, the number of NPC's (none playable characters) & the type of NPC. Your random map will appear in the space below.
+                </p>
+            </div>
+            <div className="container p-3">
+                <div className="d-flex justify-content-around mb-4">
+                    <label className="m-2">
+                        Type of location:<span> </span>
+                        <DropDown
+                            options={locations}
+                            handleSelect={handleInputChange}
+                            name="location"
+                        />
+                    </label>
+                    <label className="m-2">
+                        {/* going to try and get it the same as Amazon's input change */}
+                        Number of NPC's:<span> </span>
+                        <DropDown
+                            options={npcNums}
+                            handleSelect={handleInputChange}
+                            name="npcNum"
+                        />
+                        {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
+                    </label>
+                    <label className="m-2">
+                        {/* going to try and get it the same as Amazon's input change */}
+                        Type of NPC:<span> </span>
+                        <DropDown
+                            options={typeNPC}
+                            handleSelect={handleInputChange}
+                            name="typeNPC"
+                        />
+                        {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
+                    </label>
+                    <input type="submit" value="Submit" onClick={handleSubmit} />
+                </div>
+                <div style={styleBox} className="border border-4 border-dark w-75 mx-auto mapcontainer mb-4">
+                    <Image
+                        cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
+                        publicId={selectedMap}
+                        width="100%"
+                        height="100%"
+                    />
+                </div>
+                <div>
+                    <div>
+                        <h3>Stat Block for NPC</h3>
+                    </div>
+                    <div>
+                        {/* location of rendered stat blocks */}
+                        <StatBlock
+                            options={selections.typeNPC}
+                        />
+                    </div>
+                </div>
 
-            <p>Place holder as the encounter form and layout is going to go here</p>
-            <div className="container">
-                <label className="m-2">
-                    Type of location:
-                    <DropDown
-                        options={locations}
-                        handleSelect={handleInputChange}
-                        name="location"
-                    />
-                </label>
-                <label className="m-2">
-                    {/* going to try and get it the same as Amazon's input change */}
-                    Number of NPC's:
-                    <DropDown
-                        options={npcNums}
-                        handleSelect={handleInputChange}
-                        name="npcNum"
-                    />
-                    {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
-                </label>
-                <label className="m-2">
-                    {/* going to try and get it the same as Amazon's input change */}
-                    Type of NPC:
-                    <DropDown
-                        options={typeNPC}
-                        handleSelect={handleInputChange}
-                        name="typeNPC"
-                    />
-                    {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
-                </label>
-                <input type="submit" value="Submit" onClick={handleSubmit} />
+
             </div>
-            <div style={styleBox} className="border border-dark w-75 mx-auto ">
-                <Image
-                    cloudName={process.env.REACT_APP_CLOUDINARY_NAME}
-                    publicId={selectedMap}
-                    width="100%"
-                    height="100%"
-                />
-            </div>
-            <div>
-                {/* location of rendered stat blocks */}
-                <StatBlock 
-                    options={selections.typeNPC}
-                />
-            </div>
+
         </div>
 
         //     // adding in a zoom in feature for the images when they are rendered onto the screen

@@ -17,7 +17,7 @@ function Footer() {
                         <li><a></a></li>
                     </ul>
                     <ul className=" bg-secondary rounded text-light m-2 p-2">
-                        <li>Quick list</li>
+                        <li>Quick List</li>
                         <li><a></a></li>
                         <li><a></a></li>
                         <li><a></a></li>
