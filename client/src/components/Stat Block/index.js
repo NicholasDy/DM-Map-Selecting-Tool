@@ -1,10 +1,27 @@
+import API from "../../utils/API";
 
-function StatBlock() {
+function StatBlock(props) {
+// passing the result of the submit to the component and rendering the call here for the api
+// const [creatureSelected, setCreatureSelected] = useState();
+
+// const callNPC = await API.statBlockPull(selections.typeNPC)
+// renderNPC(callNPC.data)
+
+// const renderNPC =  (selectedNPC) => {
+//     statObject = selectedNPC
+//     console.log(statObject)
+// }
 
 
+
+console.log(props.typeNPC)
     return (
         <>
-            <div class="stat-block">
+         <div class="creature-heading">
+                        <h1>{props.name}</h1>
+                        <h2>{props.size}, {props.alignment}</h2>
+                    </div> 
+            {/* <div class="stat-block">
                 <hr class="orange-border" />
                 <div class="section-left">
                     <div class="creature-heading">
@@ -124,7 +141,7 @@ function StatBlock() {
                     </div> <!-- actions -->
                 </div> <!-- section right -->
                 <hr class="orange-border bottom" />
-            </div> <!-- stat block -->
+            </div> <!-- stat block --> */}
         </>
     )
 };

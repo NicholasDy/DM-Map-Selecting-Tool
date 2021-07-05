@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import DropDown from "../components/DropDown";
 import API from "../utils/API";
-import { Image } from 'cloudinary-react'
+import { Image } from 'cloudinary-react';
+import StatBlock from "../components/Stat Block";
 
 function Encounter() {
-    const [selections, setSelections] = useState({ location: "Tavern", npcNum: 1 });
+    const [selections, setSelections] = useState({ location: "Tavern", npcNum: 1, typeNPC: "goblin" });
     const [selectedMap, setSelectedMap] = useState();
-    const [creatureSelected, setCreatureSelected] = useState();
     // const [locations, setLocations] = useState([]);
 
     const locations = [
@@ -19,6 +19,18 @@ function Encounter() {
         1, 2, 3, 4, 5, 6, 7, 8, 9
     ]
 
+    const typeNPC = [
+        "Goblin",
+        "Bandit",
+        "Orc",
+        "Dire Wolf",
+        "Brown Bear",
+
+    ]
+
+    let statObject = {}
+    // const [terrains, setTerrains] = useState([]) 
+    // api call for the terrain 
     useEffect(() => {
         API.terrainAPI()
             .then(res => {
@@ -30,9 +42,13 @@ function Encounter() {
         //     cleanup
         // }
     }, [])
-
-    // const [terrains, setTerrains] = useState([])
-    // api call for the terrain 
+    
+    // useEffect(() => {
+    //     
+    //     return () => {
+    //         cleanup
+    //     }
+    // }, [creatureSelected])
 
     const styleBox = {
         height: "500px",
@@ -51,8 +67,8 @@ function Encounter() {
         try {
             console.log(selections)
             const callImage = await API.imagePull(selections.location)
-            console.log(callImage.data)
             renderImage(callImage.data)
+            
             // // switch (selections.location) {
             //     case "Tavern":
             //         console.log('Tavern')
@@ -67,21 +83,19 @@ function Encounter() {
         }
     }
 
-
-
     const renderImage = (selectedMap) => {
         let min = Math.ceil(0);
         let max = Math.floor(selectedMap.length);
         const randomSelected = Math.floor(Math.random() * (max - min))
         setSelectedMap(selectedMap[randomSelected])
         console.log("image loaded")
-        console.log(selectedMap[randomSelected])
 
     }
 
-    function inputChange() {
-        //going to change the options field to a 
-    }
+ 
+    // function inputChange() {
+    //     //going to change the options field to a 
+    // }
     return (
         <div>
 
@@ -105,6 +119,16 @@ function Encounter() {
                     />
                     {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
                 </label>
+                <label className="m-2">
+                    {/* going to try and get it the same as Amazon's input change */}
+                    Type of NPC:
+                    <DropDown
+                        options={typeNPC}
+                        handleSelect={handleInputChange}
+                        name="typeNPC"
+                    />
+                    {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
+                </label>
                 <input type="submit" value="Submit" onClick={handleSubmit} />
             </div>
             <div style={styleBox} className="border border-dark w-75 mx-auto ">
@@ -115,7 +139,12 @@ function Encounter() {
                     height="100%"
                 />
             </div>
-
+            <div>
+                {/* location of rendered stat blocks */}
+                <StatBlock 
+                    options={selections.typeNPC}
+                />
+            </div>
         </div>
 
         //     // adding in a zoom in feature for the images when they are rendered onto the screen

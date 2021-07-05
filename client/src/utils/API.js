@@ -52,6 +52,18 @@ export default {
             console.log(error)
         }
 
+    },
+
+    statBlockPull: async function (typeNPC){
+        try {
+            console.log('monster call')
+            let lowerName = typeNPC.toLowerCase();
+            const locationImages = 'https://www.dnd5eapi.co/api/monsters/' + lowerName
+            const call = await axios.get(locationImages)
+            return call
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 }
