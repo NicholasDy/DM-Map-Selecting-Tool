@@ -77,39 +77,46 @@ function Upload() {
 
 
     return (
-        <div>
-           
-            <h1 className="title">Upload an Map</h1> 
-            <label className="m-2">
-                Type of location:
-                <DropDown
-                    key={locations.index}
-                    options={locations}
-                    handleSelect={handleInputChange}
-                    name="location"
-                />
-            </label>
-            <form onSubmit={handleSubmitFile} className="form">
-                <input
-                    id="fileInput"
-                    type="file"
-                    name="image"
-                    onChange={handleFileInputChange}
-                    value={fileInputState}
-                    className="form-input"
-                />
-                <button className="button" type="submit">
-                    Submit
-                </button>
-            </form>
-            {previewSource && (
-                <img
-                    src={previewSource}
-                    alt="chosen"
-                    style={{ height: '300px' }}
-                />
-            )}
-        </div>
+        <>
+            <div className="m-3">
+                <h1 className="title">Upload an Map</h1>
+                <p>Please select a location to upload your image. Images are reviewed after they are submitted and may be subject to removal.</p>
+            </div>
+
+            <div className="m-3">
+                <label className="m-2">
+                    Type of location:<span> </span>
+                    <DropDown
+                        key={locations.index}
+                        options={locations}
+                        handleSelect={handleInputChange}
+                        name="location"
+                    />
+                </label>
+                <form onSubmit={handleSubmitFile} className="form ">
+                    <input
+                        className="button"
+                        id="fileInput"
+                        type="file"
+                        name="image"
+                        onChange={handleFileInputChange}
+                        value={fileInputState}
+                        className="form-input"
+                    />
+                    <button className="button" type="submit">
+                        Submit
+                    </button>
+                </form>
+                {previewSource && (
+                    <img
+                        src={previewSource}
+                        alt="chosen"
+                        style={{ height: '300px' }}
+                    />
+                )}
+            </div>
+
+        </>
     )
 }
 

@@ -1,6 +1,9 @@
 :root{
   --header-footer: black;
   --header-font: black; 
+  --link-font:white;
+  --h2backbg: #D3D3D3;
+  --cardcolour: white;
 }
 
 body {
@@ -63,9 +66,21 @@ li{
   text-indent: 5%;
 }
 
+.titlebg{
+  background-color: var(--h2backbg);
+}
+
+.centerCard{
+  background-color: var(--cardcolour);
+}
+
 .mapcontainer{
   max-width:750px;
   min-width: 300px;
+}
+
+.linkfont{
+  color: var(--link-font)
 }
 
 @media screen and (max-width: 575px){

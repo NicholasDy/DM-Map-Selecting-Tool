@@ -12,7 +12,7 @@ function Home() {
                     <Carousel.Item >
                         <a href="https://www.reddit.com/r/dndmaps/" target="_blank">
                             <img
-                                className="d-block mw-100  imgCar"
+                                className="d-block mw-100 imgCar"
                                 src={redImage}
                                 alt="First slide"
                             />
@@ -40,25 +40,28 @@ function Home() {
                 </Carousel>
             </div>
 
-            <div className="m-4 p-2 border border-dark border-4">
-                <h2>
-                    What is D&D Map Finder?
-                </h2>
-                <p>
-                    Part of the problem for any Dungeon Master when they are running their own campaign is what is the right map or location to use when you are running random encounters? Not everyone is gifted at creating a scene in their head and perfectly discribing the area to their players.
-                </p>
-                <p>
-                    D&D Map Finder aims to help fix some of the problems that many people face by storing a random collection of maps in one place. Don't go searching the internet looking for maps when all you have to do is input the area you are looking for and a map will appear before you.
-                </p>
-                <p>
-                    If you don't like what map you are given you can search again and a another map will appear based on the inputs you have selected.
-                </p>
-
+            <div className="m-4 border border-dark border-4 rounded">
+                <div className="titlebg p-2 m-2">
+                    <h2 className="">
+                        What is D&D Map Finder?
+                    </h2>
+                </div>
+                <div className="centerCard m-2">
+                    <p>
+                        Part of the problem for any Dungeon Master when they are running their own campaign is what is the right map or location to use when you are running random encounters? Not everyone is gifted at creating a scene in their head and perfectly discribing the area to their players.
+                    </p>
+                    <p>
+                        D&D Map Finder aims to help fix some of the problems that many people face by storing a random collection of maps in one place. Don't go searching the internet looking for maps when all you have to do is input the area you are looking for and a map will appear before you.
+                    </p>
+                    <p>
+                        If you don't like what map you are given you can search again and a another map will appear based on the inputs you have selected.
+                    </p>
+                </div>
             </div>
 
-            <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between">
+            <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between rounded">
                 <div>
-                    <h2>Find your map!</h2>
+                    <h2 className="titlebg p-2">Find your map!</h2>
                     <p>Dynamically find the map you are looking for!</p>
                 </div>
                 <div className="p-3">
@@ -67,21 +70,20 @@ function Home() {
                 </div>
             </div>
 
-            <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between">
-                 <div className="p-3">
+            <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between rounded">
+                <div className="p-3">
                     <img src={placeHolder} />
-
                 </div>
                 <div>
-                    <h2>Upload your favourite maps</h2>
+                    <h2 className="titlebg p-2">Upload your favourite maps</h2>
                     <p>Find a map online that you think others are going to use? Upload it to our servers so everyone can enjoy!</p>
                 </div>
-               
+
 
             </div>
 
-            <article className="m-4 p-2 border border-dark border-4">
-                <h2>
+            <article className="m-4 p-2 border border-dark border-4 rounded">
+                <h2 className="titlebg p-2">
                     What is next for D&D Map Finder?
                 </h2>
                 <p>

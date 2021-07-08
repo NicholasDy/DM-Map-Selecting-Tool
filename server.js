@@ -23,7 +23,7 @@ const sess = {
 
 app.use(session(sess));
 
-app.use(express.json({limit: "50mb"}));
+app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
@@ -32,4 +32,4 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
-// migrations are the standard 
+// migrations are the standard

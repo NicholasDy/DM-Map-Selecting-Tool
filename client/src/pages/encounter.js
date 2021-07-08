@@ -7,6 +7,7 @@ import StatBlock from "../components/Stat Block";
 function Encounter() {
     const [selections, setSelections] = useState({ location: "Tavern", npcNum: 1, typeNPC: "goblin" });
     const [selectedMap, setSelectedMap] = useState();
+    const [block, setBlock] = useState(null);
     // const [locations, setLocations] = useState([]);
 
     const locations = [
@@ -68,16 +69,15 @@ function Encounter() {
             console.log(selections)
             const callImage = await API.imagePull(selections.location)
             renderImage(callImage.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
 
-            // // switch (selections.location) {
-            //     case "Tavern":
-            //         console.log('Tavern')
-            //         const callImage = await API.imagePull(selections.location)
-            //         console.log(callImage.data)
-            //         renderImage(callImage.data)
-            //     default:
-            //         return
-            // }
+    const callNPC = async () => {
+        try {
+            const stat = await API.statBlockPull(selections.typeNPC)
+            setBlock(stat)
         } catch (error) {
             console.log(error)
         }
@@ -89,7 +89,6 @@ function Encounter() {
         const randomSelected = Math.floor(Math.random() * (max - min))
         setSelectedMap(selectedMap[randomSelected])
         console.log("image loaded")
-
     }
 
 
@@ -134,7 +133,10 @@ function Encounter() {
                         />
                         {/* <option onClick={inputChange} > 9+</option> going to have the option to have more than 9 */}
                     </label>
-                    <input type="submit" value="Submit" onClick={handleSubmit} />
+                    <input type="submit" value="Submit" onClick={() => {
+                        handleSubmit();
+                        callNPC();
+                    }} />
                 </div>
                 <div style={styleBox} className="border border-4 border-dark w-75 mx-auto mapcontainer mb-4">
                     <Image
@@ -144,17 +146,20 @@ function Encounter() {
                         height="100%"
                     />
                 </div>
-                <div>
+                {block &&
                     <div>
-                        <h3>Stat Block for NPC</h3>
+                        <div>
+                            <h3>Stat Block for NPC</h3>
+                        </div>
+                        <div>
+                            {/* location of rendered stat blocks */}
+                            <StatBlock
+                                options={selections.typeNPC}
+                                block={block}
+                            />
+                        </div>
                     </div>
-                    <div>
-                        {/* location of rendered stat blocks */}
-                        <StatBlock
-                            options={selections.typeNPC}
-                        />
-                    </div>
-                </div>
+                }
 
 
             </div>

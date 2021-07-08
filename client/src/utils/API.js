@@ -64,6 +64,16 @@ export default {
         } catch (error) {
             console.log(error)
         }
+    },
+
+    logOut: async function (){
+        try {
+            console.log("logout test")
+            await axios.post("/api/users/logout")
+            return
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 }

@@ -10,17 +10,17 @@ function Footer() {
             </div>
             <div className="m-4">
                 <div className="d-flex">
-                    <ul className=" bg-secondary rounded text-light m-2 p-2">
-                        <li>Contact Me</li>
-                        <li><a></a></li>
-                        <li><a></a></li>
-                        <li><a></a></li>
+                    <ul className="rounded text-light m-2 p-2">
+                        <li>Contact Me:</li>
+                        <li>Linkdin: <a className="linkfont" href="https://www.linkedin.com/in/nicholas-dyke/" target="blank">Personal Linkdin</a></li>
+                        <li>Github: <a className="linkfont" href="https://github.com/NicholasDy" target="blank">Github Profile</a></li>
                     </ul>
-                    <ul className=" bg-secondary rounded text-light m-2 p-2">
-                        <li>Quick List</li>
-                        <li><a></a></li>
-                        <li><a></a></li>
-                        <li><a></a></li>
+                    <ul className="rounded text-light m-2 p-2">
+                        <li>Quick List:</li>
+                        <li><a className="linkfont" href="/">Home</a></li>
+                        <li><a className="linkfont" href="/encounter">Encounter</a></li>
+                        <li><a className="linkfont" href="/upload">Upload</a></li>
+                        <li><a className="linkfont" href="/login">Login</a></li>
                     </ul>
                 </div>
             </div>
