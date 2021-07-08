@@ -1,4 +1,3 @@
-import API from "../../utils/API";
 
 function StatBlock(props) {
     // passing the result of the submit to the component and rendering the call here for the api
@@ -12,14 +11,13 @@ function StatBlock(props) {
     const { data } = block
 
     const actions = data.actions
-    const mapedActions = data.actions.map((actions) =>
+    const mapedActions = actions.map((actions) =>
         <>
             <h4>{actions}</h4><span> </span>
             <p>{actions}</p>
         </>
 
     )
-
 
     console.log(block)
     return (
@@ -84,16 +82,30 @@ function StatBlock(props) {
                         <svg height="5" width="100%" className="tapered-rule">
                             <polyline points="0,0 400,2.5 0,5"></polyline>
                         </svg>
-                        {/* These are going to require a map function that runs over all of the different immunities or the conditions 
-                        <div className="property-line first">
-                            <h4>Damage Immunities</h4>
-                            <p>poison, psychic</p> 
-                        </div>
-                        <div className="property-line">
-                            <h4>Condition Immunities</h4>
-                            <p>blinded, charmed, deafened, exhaustion, frightened,
-                                petrified, poisoned</p>
-                        </div>  */}
+                        {data.damage_immunities.map(immunities => (
+                            <div className="property-block">
+                                <h4>{immunities.name}</h4> <span>-  </span>
+                                <p>{immunities.desc}</p>
+                            </div>
+                        ))}
+                        {data.condition_immunities.map(condition_immunities => (
+                            <div className="property-block">
+                                <h4>{condition_immunities.name}</h4> <span>-  </span>
+                                <p>{condition_immunities.desc}</p>
+                            </div>
+                        ))}
+                        {data.damage_vulnerabilities.map(vulnerabilities => (
+                            <div className="property-block">
+                                <h4>{vulnerabilities.name}</h4> <span>-  </span>
+                                <p>{vulnerabilities.desc}</p>
+                            </div>
+                        ))}
+                        {data.damage_resistances.map(resistances => (
+                            <div className="property-block">
+                                <h4>{resistances.name}</h4> <span>-  </span>
+                                <p>{resistances.desc}</p>
+                            </div>
+                        ))}
                         <div className="property-line">
                             <h4>Senses</h4><span> </span>
                             <p>{data.senses.darkvision} <br />
@@ -112,42 +124,37 @@ function StatBlock(props) {
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>
                     {/* this is going to need another map */}
-
-                    <div className="property-block">
-
-                    </div>
-                    <div className="property-block">
-                        <h4>{data.special_abilities[0].name}</h4><span> </span>
-                        <p>{data.special_abilities[0].desc}</p>
-                    </div>
+                    {data.special_abilities.map(abilities => (
+                        <div className="property-block">
+                            <h4>{abilities.name}</h4> <span>-  </span>
+                            <p>{abilities.desc}</p>
+                        </div>
+                    ))}
 
                 </div> {/*} section left */}
                 <div className="section-right">
                     <div className="actions">
-                        {/* {mapedActions} */}
                         <h3>Actions</h3>
-                        <div className="property-block">
-                            <h4>Multiattack.</h4>
-                            <p>The armor makes two melee attacks.</p>
-                        </div> {/*} property block */}
-                        <div className="property-block">
-                            <h4>Slam.</h4>
-                            <p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
-                                <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.</p>
-                        </div> {/*} property block */}
-                    </div> {/*} actions */}
-                    <div className="actions">
+                        {data.actions.map(action => (
+                            <div className="property-block">
+                                <h4>{action.name}</h4> <span>- </span>
+                                <p>{action.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                    {/* Unneeded right now */}
+                    {/* <div className="actions">
                         <h3>Legendary Actions</h3>
                         <div className="property-block">
                             <h4>Multiattack.</h4>
                             <p>The armor makes two melee attacks.</p>
-                        </div> {/*} property block */}
+                        </div>
                         <div className="property-block">
                             <h4>Slam.</h4>
                             <p><i>Melee Weapon Attack:</i> +4 to hit, reach 5 ft., one target.
                                 <i>Hit:</i> 5 (1d6 + 2) bludgeoning damage.</p>
-                        </div> {/*} property block */}
-                    </div> {/*} actions */}
+                        </div> 
+                    </div> */}
                 </div> {/*} section right */}
                 <hr className="orange-border bottom" />
             </div> {/*} stat block */}
