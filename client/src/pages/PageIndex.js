@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
 import Home from './Home.js';
-import Encounter from './Encounter.js';
+import Encounter from './Encounter';
 import Login from './Login.js';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
