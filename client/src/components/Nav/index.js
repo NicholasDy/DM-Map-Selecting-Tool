@@ -2,7 +2,6 @@ import React from "react"
 import draglogo from "../../images/dragonlogo.png"
 import "./Nav.css";
 import { NavLink } from 'react-router-dom';
-import API from "../../utils/API";
 import { useAuthContext } from '../AuthContext';
 
 function Nav() {

@@ -9,8 +9,9 @@ function Home() {
         <>
             <div className="carousel">
                 <Carousel className="m-3 h-100">
+                    {/* adding the div to help control the sizing of the area */}
                     <Carousel.Item >
-                        <a href="https://www.reddit.com/r/dndmaps/" target="_blank">
+                        <a href="https://www.reddit.com/r/dndmaps/" target="_blank" rel="noopener noreferrer">
                             <img
                                 className="d-block mw-100 imgCar"
                                 src={redImage}
@@ -18,7 +19,7 @@ function Home() {
                             />
                         </a>
                         <Carousel.Caption className="bg-secondary rounded">
-                            <a href="https://www.reddit.com/r/dndmaps/" target="_blank" className="nounderline">
+                            <a href="https://www.reddit.com/r/dndmaps/" target="_blank" rel="noopener noreferrer" className="nounderline">
                                 <h3 className="text-light">Look for your new maps from any source</h3>
                             </a>
                         </Carousel.Caption>

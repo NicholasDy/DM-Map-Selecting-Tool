@@ -10,14 +10,43 @@ function StatBlock(props) {
     const { block } = props;
     const { data } = block
 
-    const actions = data.actions
-    const mapedActions = actions.map((actions) =>
-        <>
-            <h4>{actions}</h4><span> </span>
-            <p>{actions}</p>
-        </>
-
-    )
+    const numberStat = (number) => {
+        const x = number;
+        switch (true) {
+            case 1:
+                return "-5"
+            case (x < 4):
+                return "-4"
+            case (x < 6):
+                return "-3"
+            case (x < 8):
+                return "-2"
+            case (x < 10):
+                return "-1"
+            case (x < 12):
+                return "0"
+            case (x < 14):
+                return "+1"
+            case (x < 16):
+                return "+2"
+            case (x < 18):
+                return "+3"
+            case (x < 20):
+                return "+4"
+            case (x < 22):
+                return "+5"
+            case (x < 24):
+                return "+6"
+            case (x < 26):
+                return "+6"
+            case (x < 28):
+                return "+6"
+            case 30:
+                return "+10"
+            default:
+                return "0"
+        }
+    }
 
     console.log(block)
     return (
@@ -56,27 +85,27 @@ function StatBlock(props) {
                         <div className="abilities">
                             <div className="ability-strength">
                                 <h4>STR</h4>
-                                <p>{data.strength}</p>
+                                <p>{data.strength}({numberStat(data.strength)})</p>
                             </div> {/*} ability strength */}
                             <div className="ability-dexterity">
                                 <h4>DEX</h4>
-                                <p>{data.dexterity}</p>
+                                <p>{data.dexterity}({numberStat(data.dexterity)})</p>
                             </div> {/*} ability dexterity */}
                             <div className="ability-constitution">
                                 <h4>CON</h4>
-                                <p>{data.constitution}</p>
+                                <p>{data.constitution}({numberStat(data.constitution)})</p>
                             </div> {/*} ability constitution */}
                             <div className="ability-intelligence">
                                 <h4>INT</h4>
-                                <p>{data.intelligence}</p>
+                                <p>{data.intelligence}({numberStat(data.intelligence)})</p>
                             </div> {/*} ability intelligence */}
                             <div className="ability-wisdom">
                                 <h4>WIS</h4>
-                                <p>{data.wisdom}</p>
+                                <p>{data.wisdom}({numberStat(data.wisdom)})</p>
                             </div> {/*} ability wisdom */}
                             <div className="ability-charisma">
                                 <h4>CHA</h4>
-                                <p>{data.charisma}</p>
+                                <p>{data.charisma}({numberStat(data.charisma)})</p>
                             </div> {/*} ability charisma */}
                         </div> {/*} abilities */}
                         <svg height="5" width="100%" className="tapered-rule">
@@ -139,6 +168,14 @@ function StatBlock(props) {
                             <div className="property-block">
                                 <h4>{action.name}</h4> <span>- </span>
                                 <p>{action.desc}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="actions">
+                        <h3>Proficiencies</h3>
+                        {data.proficiencies.map(proficiencies => (
+                            <div className="property-block">
+                                <p>{proficiencies.proficiency.name}</p>
                             </div>
                         ))}
                     </div>
