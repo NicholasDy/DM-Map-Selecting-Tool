@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom";
-import Home from './Home.js';
-import Encounter from './Encounter';
-import Login from './Login.js';
+import Home from './home.js';
+import Encounter from './encounter';
+import Login from './login.js';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import Upload from './Upload.js';
+import Upload from './upload.js';
 import { useAuthContext } from '../components/AuthContext/index';
 
 function PageIndex() {
