@@ -3,6 +3,7 @@ const { cloudinary } = require('../../utlis/cloudinary')
 
 router.post('/Tavern', async (req, res) => {
     try {
+        console.log("tavern call")
         const fileStr = req.body.data;
         const uploadResponse = await cloudinary.uploader.upload(fileStr,
             { upload_preset: 'tavern_setup' },
@@ -11,6 +12,7 @@ router.post('/Tavern', async (req, res) => {
         res.json({ msg: 'done' });
     } catch (err) {
         console.error(err);
+        console.log("tavern fail")
         res.status(500).json({ err: 'Something went wrong' });
     }
 });
@@ -30,7 +32,7 @@ router.post('/Woodland', async (req, res) => {
 router.post('/Plains', async (req, res) => {
     try {
         const fileStr = req.body.data;
-        const uploadResponse = await cloudinary.uploader.upload(fileStr, 
+        const uploadResponse = await cloudinary.uploader.upload(fileStr,
             { upload_preset: 'plains' },
             { folder: "woodland" });
         console.log("here", uploadResponse);

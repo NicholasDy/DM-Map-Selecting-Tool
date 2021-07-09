@@ -47,14 +47,14 @@ export default {
                 url: '/api/cloudinary/' + location,
                 body: JSON.stringify({ data: base64EncodedImage })
             })
-            return 
+            return
         } catch (error) {
             console.log(error)
         }
 
     },
 
-    statBlockPull: async function (typeNPC){
+    statBlockPull: async function (typeNPC) {
         try {
             console.log('monster call')
             let lowerName = typeNPC.toLowerCase();
@@ -66,7 +66,7 @@ export default {
         }
     },
 
-    logOut: async function (){
+    logOut: async function () {
         try {
             console.log("logout test")
             await axios.post("/api/users/logout")
