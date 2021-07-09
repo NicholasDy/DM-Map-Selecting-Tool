@@ -22,7 +22,14 @@ export default {
         try {
             console.log('call')
             const locationImages = '/api/cloudinary/' + location
-            const call = await axios.get(locationImages)
+            // const call = await axios.get(locationImages)
+            const call = await axios({
+                method: 'GET',
+                url: locationImages,
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            })
             return call
         } catch (error) {
             console.log(error)
