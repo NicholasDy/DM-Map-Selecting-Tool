@@ -29,7 +29,6 @@ function Encounter() {
 
     ]
 
-    let statObject = {}
     // const [terrains, setTerrains] = useState([]) 
     // api call for the terrain 
     useEffect(() => {
