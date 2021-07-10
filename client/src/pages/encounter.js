@@ -94,6 +94,8 @@ function Encounter() {
     // function inputChange() {
     //     //going to change the options field to a 
     // }
+
+    // const testCall = 
     return (
         <div>
             <div className="border border-4 border-dark m-3 p-2">

@@ -81,6 +81,15 @@ export default {
         } catch (error) {
             console.log(error)
         }
+    },
+
+    test: async function () {
+        try {
+            const call = await axios.get('/api/cloudinary/test')
+            console.log(call)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
 }
