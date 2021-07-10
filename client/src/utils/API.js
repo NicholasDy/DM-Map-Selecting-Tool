@@ -35,8 +35,6 @@ export default {
             console.log(error)
 
         }
-
-
     },
 
     //this is refusing to transfer the data for the file over to the server
@@ -85,7 +83,12 @@ export default {
 
     test: async function () {
         try {
-            const call = await axios.get('/api/cloudinary/test')
+            const call = await fetch('/api/cloudinary/test', {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            })
             console.log(call)
         } catch (error) {
             console.log(error)
