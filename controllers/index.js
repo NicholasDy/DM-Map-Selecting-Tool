@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { User, Npc, Encounter, Location } = require("../models/index")
 const apiRouters = require('./api')
+const path = require("path");
 
 router.use("/api", apiRouters)
 router.use(function (req, res) {
