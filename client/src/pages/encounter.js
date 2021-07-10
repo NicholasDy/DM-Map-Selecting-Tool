@@ -95,7 +95,13 @@ function Encounter() {
     //     //going to change the options field to a 
     // }
 
-    // const testCall = 
+    const testCall = async () => {
+        try {
+            const call = await API.test()
+        } catch (error) {
+            console.log(error)
+        }
+    }
     return (
         <div>
             <div className="border border-4 border-dark m-3 p-2">
@@ -161,7 +167,7 @@ function Encounter() {
                         </div>
                     </div>
                 }
-
+                <button onClick={testCall}>test</button>
 
             </div>
 

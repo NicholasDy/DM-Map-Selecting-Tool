@@ -83,6 +83,7 @@ router.get('/Woodland', async (req, res) => {
 router.get('/test', async (req, res) => {
     try {
         console.log('test get')
+        const test = "test"
     } catch (error) {
         console.error(error)
     }
