@@ -4,6 +4,7 @@ const session = require("express-session");
 const routes = require("./controllers");
 const path = require("path");
 var cors = require('cors');
+const router = express.Router();
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -27,10 +28,11 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(express.static(path.join(__dirname, "public")));
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-  app.get("*", (req, res) => {
-    res.sendFile("index.html");
+  app.use(express.static("./client/build"));
+  router.use((req, res) => {
+    res.sendFile(path.join(__dirname, "./client/build/index.html"));
   });
+  app.use(router)
 }
 app.use(cors());
 
@@ -38,3 +40,4 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
+// migrations are the standard
