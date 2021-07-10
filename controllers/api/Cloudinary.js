@@ -31,8 +31,8 @@ router.post('/Plains', async (req, res) => {
     try {
         const fileStr = req.body.data;
         const uploadResponse = await cloudinary.uploader.upload(fileStr,
-            { upload_preset: 'plains' },
-            { folder: "woodland" });
+            { upload_preset: 'Plains' },
+            { folder: "plains" });
         console.log("here", uploadResponse);
         res.json({ msg: 'done' });
     } catch (err) {
