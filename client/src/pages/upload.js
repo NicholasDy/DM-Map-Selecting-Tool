@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import API from "../utils/API";
 import DropDown from "../components/DropDown";
 
 function Upload() {

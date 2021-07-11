@@ -112,25 +112,25 @@ function StatBlock(props) {
                             <polyline points="0,0 400,2.5 0,5"></polyline>
                         </svg>
                         {data.damage_immunities.map(immunities => (
-                            <div className="property-block">
+                            <div className="property-block" key={immunities.id}>
                                 <h4>{immunities.name}</h4> <span>-  </span>
                                 <p>{immunities.desc}</p>
                             </div>
                         ))}
                         {data.condition_immunities.map(condition_immunities => (
-                            <div className="property-block">
+                            <div className="property-block" key={condition_immunities.id}>
                                 <h4>{condition_immunities.name}</h4> <span>-  </span>
                                 <p>{condition_immunities.desc}</p>
                             </div>
                         ))}
                         {data.damage_vulnerabilities.map(vulnerabilities => (
-                            <div className="property-block">
+                            <div className="property-block" key={vulnerabilities.id}>
                                 <h4>{vulnerabilities.name}</h4> <span>-  </span>
                                 <p>{vulnerabilities.desc}</p>
                             </div>
                         ))}
                         {data.damage_resistances.map(resistances => (
-                            <div className="property-block">
+                            <div className="property-block" key={resistances.id}>
                                 <h4>{resistances.name}</h4> <span>-  </span>
                                 <p>{resistances.desc}</p>
                             </div>
@@ -154,7 +154,7 @@ function StatBlock(props) {
                     </svg>
                     {/* this is going to need another map */}
                     {data.special_abilities.map(abilities => (
-                        <div className="property-block">
+                        <div className="property-block" key={abilities.id}>
                             <h4>{abilities.name}</h4> <span>-  </span>
                             <p>{abilities.desc}</p>
                         </div>
@@ -165,7 +165,7 @@ function StatBlock(props) {
                     <div className="actions">
                         <h3>Actions</h3>
                         {data.actions.map(action => (
-                            <div className="property-block">
+                            <div className="property-block" key={action.id}>
                                 <h4>{action.name}</h4> <span>- </span>
                                 <p>{action.desc}</p>
                             </div>
@@ -174,7 +174,7 @@ function StatBlock(props) {
                     <div className="actions">
                         <h3>Proficiencies</h3>
                         {data.proficiencies.map(proficiencies => (
-                            <div className="property-block">
+                            <div className="property-block" key={proficiencies.id}>
                                 <p>{proficiencies.proficiency.name}</p>
                             </div>
                         ))}

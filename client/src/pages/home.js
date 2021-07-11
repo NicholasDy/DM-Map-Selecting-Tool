@@ -25,7 +25,7 @@ function Home() {
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item >
-                        <a href="https://dnd.wizards.com/" target="_blank">
+                        <a href="https://dnd.wizards.com/" target="_blank" rel="noopener noreferrer">
                             <img
                                 className="d-block w-100  imgCar"
                                 src={dndImage}

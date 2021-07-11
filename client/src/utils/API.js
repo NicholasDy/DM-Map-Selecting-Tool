@@ -47,11 +47,6 @@ export default {
                 url: '/api/cloudinary/' + location,
                 data: JSON.stringify({ data: base64EncodedImage })
             })
-            const postcall = await axios({
-                method: 'POST',
-                url: '/api/cloudinary/' + location,
-                body: JSON.stringify({ data: base64EncodedImage })
-            })
             return
         } catch (error) {
             console.log(error)
@@ -63,7 +58,8 @@ export default {
         try {
             console.log('monster call')
             let lowerName = typeNPC.toLowerCase();
-            const locationImages = 'https://www.dnd5eapi.co/api/monsters/' + lowerName
+            let newName = lowerName.replace(/ /, '-')
+            const locationImages = 'https://www.dnd5eapi.co/api/monsters/' + newName
             const call = await axios.get(locationImages)
             return call
         } catch (error) {
