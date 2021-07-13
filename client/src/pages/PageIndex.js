@@ -11,7 +11,7 @@ import { useAuthContext } from '../components/AuthContext/index';
 function PageIndex() {
     const { user } = useAuthContext();
     return (
-        <>
+        <div className="flex-wrapper">
             <Router>
                 <Nav />
                 {user
@@ -42,7 +42,7 @@ function PageIndex() {
                     )}
             </Router>
             <Footer />
-        </>
+        </div>
     )
 }
 

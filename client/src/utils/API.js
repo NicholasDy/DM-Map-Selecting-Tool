@@ -56,7 +56,6 @@ export default {
 
     statBlockPull: async function (typeNPC) {
         try {
-            console.log('monster call')
             let lowerName = typeNPC.toLowerCase();
             let newName = lowerName.replace(/ /, '-')
             const locationImages = 'https://www.dnd5eapi.co/api/monsters/' + newName
@@ -69,7 +68,6 @@ export default {
 
     logOut: async function () {
         try {
-            console.log("logout test")
             await axios.post("/api/users/logout")
             return
         } catch (error) {

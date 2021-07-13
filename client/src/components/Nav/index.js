@@ -28,7 +28,14 @@ function Nav() {
       <nav className="navbar">
         <div className="w-100">
           <div href="/" className="container-fluid d-flex topHeader w-100 p-3">
-            <img src={draglogo} alt="Dragon Logo for DnD" className="d-inline-block align-text-top h1" width="50px" href="/" />
+            <div className="ovalParent">
+              <div className="oval d-flex justify-content-center align-items-end">
+                <a href="/">
+                  <img src={draglogo} alt="Dragon Logo for DnD" className="d-inline-block align-text-top h1" width="50px" href="/" />
+                </a>
+              </div>
+            </div>
+
             <span className="title-App h1 d-flex align-items-center m-2 nav-brand strong">D&D Map Finder</span>
           </div>
           <div className="d-flex bg-secondary rounded overflow-hidden d-flex justify-content-around">

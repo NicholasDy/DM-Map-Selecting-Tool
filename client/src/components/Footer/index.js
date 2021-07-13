@@ -3,10 +3,9 @@ import draglogo from "../../images/dragonlogo.png"
 
 function Footer() {
     return (
-        <footer className="d-flex justify-content-between h-10">
-            <div className="m-4">
+        <footer className=" footerDiv bottomft d-flex justify-content-between ">
+            <div className="m-4 oval d-flex justify-content-center align-items-end">
                 <img src={draglogo} alt="Dragon Logo for DnD" className="d-inline-block align-text-top h1" width="50px" href="/" />
-
             </div>
             <div className="m-4">
                 <div className="d-flex">

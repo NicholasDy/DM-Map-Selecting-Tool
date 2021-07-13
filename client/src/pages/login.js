@@ -56,7 +56,7 @@ function Login() {
   return (
     <div className="">
       <div className='loginsttr '>
-        <div className=" p-2 m-3 border">
+        <div className=" p-2 m-3 border w-50">
           <h2>Login</h2>
           <form className="form login-form">
             <div className="form-group inputgroups">
@@ -72,7 +72,7 @@ function Login() {
             </div>
           </form>
         </div>
-        <div className=" p-2 m-3 border">
+        <div className=" p-2 m-3 border w-50">
           <h2>Signup</h2>
           <form className="form signup-form">
             <div className="form-group inputgroups">

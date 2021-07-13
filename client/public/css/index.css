@@ -13,16 +13,15 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html body {
   height: 100%;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-footer {
-  height: 25%;
 }
 
 a {
@@ -38,9 +37,23 @@ li {
   display: list-item;
   text-align: -webkit-match-parent;
 }
+
 .navbar,
 footer {
   background-color: var(--header-footer);
+}
+.ovalParent {
+  /* background: black;
+  width: 200px;
+  height: 120px; */
+  overflow: hidden;
+}
+
+.oval {
+  width: 75px;
+  height: 100px;
+  background: white;
+  border-radius: 75px / 100px;
 }
 
 .topHeader {
@@ -98,6 +111,14 @@ footer {
 .loginsttr {
   display: flex;
   justify-content: space-around;
+}
+
+@media screen and (min-width: 575px) {
+  .footerDiv {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1010px) {

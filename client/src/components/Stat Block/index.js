@@ -48,20 +48,15 @@ function StatBlock(props) {
         }
     }
 
-    console.log(block)
     return (
 
         <div className="statBody">
-            <div className="creature-heading">
-                <h1>{data.name}</h1>
-                <h2>{data.size}, {data.alignment}</h2>
-            </div>
             <div className="stat-block">
                 <hr className="orange-border" />
                 <div className="section-left">
                     <div className="creature-heading">
-                        <h1></h1>
-                        <h2>{data.size}</h2>
+                        <h1>{data.name}</h1>
+                        <h2>{data.size}, {data.alignment}</h2>
                     </div> {/*} creature heading */}
                     <svg height="5" width="100%" className="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
@@ -139,7 +134,7 @@ function StatBlock(props) {
                             <h4>Senses</h4><span> </span>
                             <p>{data.senses.darkvision} <br />
                                 Passive percepion:<span> </span>{data.senses.passive_perception}</p>
-                        </div> {/*} property line */}
+                        </div>
                         <div className="property-line">
                             <h4>Languages</h4> <span>- </span>
                             <p>{data.languages}</p>
@@ -147,8 +142,8 @@ function StatBlock(props) {
                         <div className="property-line last">
                             <h4>Challenge</h4> <span> </span>
                             <p>{data.challenge_rating} ({data.xp} xp)</p>
-                        </div> {/*} property line */}
-                    </div> {/*} top stats */}
+                        </div>
+                    </div>
                     <svg height="5" width="100%" className="tapered-rule">
                         <polyline points="0,0 400,2.5 0,5"></polyline>
                     </svg>

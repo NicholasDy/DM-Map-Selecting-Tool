@@ -2,13 +2,15 @@ import React from "react"
 import { Carousel } from "react-bootstrap";
 import redImage from "../images/redditimage.PNG";
 import dndImage from "../images/dungeond-and-dragons-books-1146037.jpeg";
-import placeHolder from "../images/team-placeholder.png"
+import placeHolder from "../images/team-placeholder.png";
+import tavernEx from "../images/tavern-ex.jpg";
+import plainsex from "../images/plains-ex.jpg";
 
 function Home() {
     return (
         <>
             <div className="carousel">
-                <Carousel className="m-3 h-100">
+                <Carousel className="m-3 ">
                     {/* adding the div to help control the sizing of the area */}
                     <Carousel.Item >
                         <a href="https://www.reddit.com/r/dndmaps/" target="_blank" rel="noopener noreferrer">
@@ -24,19 +26,22 @@ function Home() {
                             </a>
                         </Carousel.Caption>
                     </Carousel.Item>
-                    <Carousel.Item >
-                        <a href="https://dnd.wizards.com/" target="_blank" rel="noopener noreferrer">
-                            <img
-                                className="d-block w-100  imgCar"
-                                src={dndImage}
-                                alt="Second slide"
-                            />
-                        </a>
-                        <Carousel.Caption className="bg-secondary rounded">
-                            <a href="https://dnd.wizards.com/" target="_blank" className="nounderline">
-                                <h3 className="text-light">Get more material here!</h3>
+                    <Carousel.Item>
+                        <div className="d-flex justify-content-center">
+                            <a href="https://dnd.wizards.com/" target="_blank" rel="noopener noreferrer">
+                                <img
+                                    className="d-block mw-100 imgCar"
+                                    src={dndImage}
+                                    alt="Second slide"
+                                />
                             </a>
-                        </Carousel.Caption>
+                            <Carousel.Caption className="bg-secondary rounded">
+                                <a href="https://dnd.wizards.com/" target="_blank" className="nounderline">
+                                    <h3 className="text-light">Get more material here!</h3>
+                                </a>
+                            </Carousel.Caption>
+                        </div>
+
                     </Carousel.Item>
                 </Carousel>
             </div>
@@ -61,21 +66,27 @@ function Home() {
             </div>
 
             <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between rounded">
-                <div>
+                <div className="w-75">
                     <h2 className="titlebg p-2">Find your map!</h2>
-                    <p>Dynamically find the map you are looking for!</p>
+                    <p>Dynamically find the map you are looking for! With an ever expanding map pool our goal is to allow you to press a button and have the map that you are looking for instantly.</p>
                 </div>
                 <div className="p-3">
-                    <img src={placeHolder} />
+                    <img src={tavernEx}
+                        width="300"
+                        height="300"
+                    />
 
                 </div>
             </div>
 
             <div className="m-4 p-2 border border-dark border-4 d-flex flex-row justify-content-between rounded">
                 <div className="p-3">
-                    <img src={placeHolder} />
+                    <img src={plainsex}
+                        width="200"
+                        height="200"
+                    />
                 </div>
-                <div>
+                <div className="w-75">
                     <h2 className="titlebg p-2">Upload your favourite maps</h2>
                     <p>Find a map online that you think others are going to use? Upload it to our servers so everyone can enjoy!</p>
                 </div>

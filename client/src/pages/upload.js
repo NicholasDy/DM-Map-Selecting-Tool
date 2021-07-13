@@ -76,7 +76,7 @@ function Upload() {
 
 
     return (
-        <>
+        <div>
             <div className="m-3">
                 <h1 className="title">Upload an Map</h1>
                 <p>Please select a location to upload your image. Images are reviewed after they are submitted and may be subject to removal.</p>
@@ -115,7 +115,7 @@ function Upload() {
                 )}
             </div>
 
-        </>
+        </div>
     )
 }
 

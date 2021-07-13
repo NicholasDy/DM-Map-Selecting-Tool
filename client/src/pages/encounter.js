@@ -22,7 +22,7 @@ function Encounter() {
 
     const typeNPC = [
         "Goblin",
-        "Bandit",
+        // "Bandit", this one thing causes the whole app to crash
         "Orc",
         "Dire Wolf",
         "Brown Bear",
@@ -55,7 +55,6 @@ function Encounter() {
     }
 
     const handleInputChange = event => {
-        console.log("hi")
         setSelections({
             ...selections,
             [event.target.name]: event.target.value
@@ -65,7 +64,6 @@ function Encounter() {
 
     const handleSubmit = async () => {
         try {
-            console.log(selections)
             const callImage = await API.imagePull(selections.location)
             renderImage(callImage.data)
         } catch (error) {
