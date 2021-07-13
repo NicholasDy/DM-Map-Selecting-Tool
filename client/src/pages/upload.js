@@ -78,11 +78,15 @@ function Upload() {
     return (
         <div>
             <div className="m-3">
-                <h1 className="title">Upload an Map</h1>
+
+                <div className="titleDivUp">
+                    <h1 className="title border-top border-bottom p-2 text-center">Upload an Map</h1>
+                </div>
+
                 <p>Please select a location to upload your image. Images are reviewed after they are submitted and may be subject to removal.</p>
             </div>
 
-            <div className="m-3">
+            <div className="m-3 d-flex align-items-center border">
                 <label className="m-2">
                     Type of location:<span> </span>
                     <DropDown
@@ -102,10 +106,12 @@ function Upload() {
                         value={fileInputState}
                         className="form-input"
                     />
-                    <button className="button" type="submit">
+                    <button className="buttons btn btn-secondary" type="submit">
                         Submit
                     </button>
                 </form>
+            </div>
+            <div className="m-3 d-flex justify-content-center">
                 {previewSource && (
                     <img
                         src={previewSource}
@@ -113,8 +119,8 @@ function Upload() {
                         style={{ height: '300px' }}
                     />
                 )}
-            </div>
 
+            </div>
         </div>
     )
 }

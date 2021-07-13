@@ -12,36 +12,43 @@ function PageIndex() {
     const { user } = useAuthContext();
     return (
         <div className="flex-wrapper">
-            <Router>
-                <Nav />
-                {user
-                    ? (
-                        <Switch>
-                            <Route exact path="/">
-                                <Home />
-                            </Route>
-                            <Route exact path="/encounter">
-                                <Encounter />
-                            </Route>
-                            <Route exact path="/upload">
-                                <Upload />
-                            </Route>
-                            <Redirect from="*" to="/" />
-                        </Switch>
-                    )
-                    : (
-                        <Switch>
-                            <Route exact path="/">
-                                <Home />
-                            </Route>
-                            <Route exact path="/login">
-                                <Login />
-                            </Route>
-                            <Redirect from="*" to="/" />
-                        </Switch>
-                    )}
-            </Router>
-            <Footer />
+            <div className="contentWrap">
+                <Router>
+                    <Nav />
+                    <div className="containerBody">
+                        {user
+                            ? (
+                                <Switch>
+                                    <Route exact path="/">
+                                        <Home />
+                                    </Route>
+                                    <Route exact path="/encounter">
+                                        <Encounter />
+                                    </Route>
+                                    <Route exact path="/upload">
+                                        <Upload />
+                                    </Route>
+                                    <Redirect from="*" to="/" />
+                                </Switch>
+                            )
+                            : (
+                                <Switch>
+                                    <Route exact path="/">
+                                        <Home />
+                                    </Route>
+                                    <Route exact path="/login">
+                                        <Login />
+                                    </Route>
+                                    <Redirect from="*" to="/" />
+                                </Switch>
+                            )}
+                    </div>
+
+                </Router>
+                <Footer />
+
+            </div>
+
         </div>
     )
 }
