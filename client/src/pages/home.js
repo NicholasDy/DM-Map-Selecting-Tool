@@ -114,7 +114,7 @@ function Home() {
                         3.0 - Player Tokens
                     </h3>
                     <p>
-                        When the map is loading onto the screen I want there to be an input so that you as a DM will be able to posistion your players dynamically on to the MAP.
+                        When the map is loading onto the screen I want there to be an input so that you as a DM will be able to position your players dynamically onto the MAP.
                     </p>
                 </div>
                 <div>
