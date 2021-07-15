@@ -16,6 +16,9 @@ Then next step in the app is going to be adding tokens for the number of npc's t
 
 ![picture](/client/src/images/screenshot.PNG)
 
+## Deployed Link
+ https://fierce-temple-48836.herokuapp.com/
+
 ## Technology Used
 
 1. Axois
