@@ -90,6 +90,9 @@ function Login() {
             <div className="form-group">
               <button className="btn btn-primary" type="submit" onClick={signupFormHandler}>signup</button>
             </div>
+            <div>
+              <p>Please create a password with no less than 8 characters</p>
+            </div>
           </form>
         </div>
       </div>

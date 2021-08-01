@@ -103,6 +103,14 @@ function Home() {
                 </p>
                 <div>
                     <h3 className="" >
+                        1.0 - Adding for Locations and Maps
+                    </h3>
+                    <p>
+
+                    </p>
+                </div>
+                <div>
+                    <h3 className="" >
                         2.0 - NPC Tokens
                     </h3>
                     <p>
